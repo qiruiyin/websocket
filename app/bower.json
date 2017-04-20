@@ -1,0 +1,17 @@
+{
+  "name": "template",
+  "description": "A site template",
+  "authors": [
+    "qiruiyin"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "gulp",
+    "sass",
+    "bower"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

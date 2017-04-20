@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		// (function(){
+			var ws;
+			if ("WebSocket" in window) {
+				var userId = navigator.appVersion;
+				ws = new WebSocket("ws://localhost:9000?userId=" + userId);
+				// 建立连接
+				ws.onopen = function (e) {
+					console.log("已连接服务器");
+				}
+
+				// 处理受到的消息
+		    ws.onmessage = function (e) {
+		      // var stocksData = JSON.parse(e.data);
+		      console.log(e.data);
+		    }
+		     
+		    // 关闭连接
+		    ws.onclose = function () {
+		    	console.log("连接已关闭..."); 
+		    }
+			} else {
+        // 浏览器不支持 WebSocket
+        alert("您的浏览器不支持 WebSocket!");
+      }
+
+      var sendMsg = function (){
+	    	ws.send($("#msg").val());
+	    }
+		// })();		
+	</script>
+</head>
+
+<body>
+	<div class="vertical-center">
+    <div class="container">
+      <p>&nbsp;</p>
+      <form role="form" id="chat_form" onsubmit="sendMsg(); return false;">
+        <div class="form-group">
+          <input class="form-control" type="text" name="message" id="msg" placeholder="请输入信息" value="" />
+        </div>
+        <button type="button" id="send" class="btn btn-primary" onclick="sendMsg();">发送</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

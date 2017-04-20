@@ -1,0 +1,24 @@
+{
+  "name": "websocket",
+  "version": "1.0.0",
+  "description": "websocket 学习实践",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiruiyin/websocket.git"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "bower"
+  ],
+  "author": "qiruiyin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qiruiyin/websocket/issues"
+  },
+  "homepage": "https://github.com/qiruiyin/websocket#readme",
+  "devDependencies": {
+    "sqlite3": "^3.1.8",
+    "ws": "^2.2.3"
+  }
+}
